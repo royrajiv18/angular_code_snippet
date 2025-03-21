@@ -49,7 +49,7 @@
     - const users$ = from([{ name: 'John' }, { name: 'Jane' }]);
     - users$.pipe(pluck('name')).subscribe(console.log); // Output: "John", "Jane"
 
-- switchMap()
+- switchMap() - Cancels the Previous Subscription
 
   - Cancel previous request if a new one arrives
   - Use Case: Useful for search autocomplete, cancelling the previous HTTP request when the user types.
@@ -62,6 +62,10 @@
     - clicks$
     - .pipe(switchMap(() => of('New API call started')))
     - .subscribe(console.log);
+
+- switchMap() - Cancels the Previous Subscription
+- mergeMap - Runs Multiple Subscriptions in Parallel
+- concatMap() – Processes One Request at a Time (FIFO Order)
 
 - filter()
 
